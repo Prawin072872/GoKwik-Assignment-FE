@@ -17,3 +17,7 @@ npm install
 npm start
 ```
 The local development server will run on http://localhost:3000
+
+### Netlify Deployed Link
+
+https://gokwik-assignment-fe.netlify.app/
