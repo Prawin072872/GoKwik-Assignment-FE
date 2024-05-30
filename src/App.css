@@ -1,38 +1,331 @@
-.App {
+body {
+  background-color: rgb(6, 6, 95); /* Blue background for the entire page */
+  margin: 20px; /* Creates a gap between the blue background and the content */
+  padding: 0; /* Remove default padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+
+.container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  padding: 20px; */
+
+  width: 650px;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: white; /* White background for the content */
+  padding: 20px;
+  overflow-x: hidden;
+ 
+}
+
+h1 {
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.form {
+  position: absolute;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  top: 50px;
+  left: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 15px;
+  color: gray;
+}
+
+.input {
+  width: calc(100% - 10px);
+  padding: 6px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-top: 10px;
+  font-size: 16px;
+  outline: none;
+  background-color: whitesmoke;
+}
+
+.input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: auto;
+  transition: background-color 0.3s;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
   text-align: center;
+  margin: 30px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-top: 30px;
+  padding-left: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 45px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.google-button:hover {
+  background-color: #357ae8;
+}
+
+.google-logo {
+  background-color: white;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.google-logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  
+}
+
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  padding: 10px 0;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-weight:bold;
+}
+
+.footer div {
+  margin-bottom: 5px;
+}
+
+.blue-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.blue-link:hover {
+  text-decoration: underline;
+}
+
+
+@media (min-width: 600px) {
+  .form {
+    max-width: 600px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+/* 
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+}
+
+h1 {
+  align-self: flex-start;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  background-color: #aaa;
+}
+
+.submit-button:not(:disabled) {
+  background-color: #007bff;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 20px;
+  background-color: #4285f4;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: fit-content;
 }
 
-.App-link {
-  color: #61dafb;
+.google-button:hover {
+  background-color: #357ae8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.google-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 2px;
+  margin-right: 10px;
 }
+
+.google-logo img {
+  display: block;
+  width: 20px;
+  height: 20px;
+} */
