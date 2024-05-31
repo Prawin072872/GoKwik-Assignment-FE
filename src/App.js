@@ -13,13 +13,13 @@ function App() {
 
 
   const debouncedInput = useDebounce(input, 500)
-  
-  
+
+
   useEffect(() => {
     validateInput(debouncedInput);
   }, [debouncedInput]);
 
-  
+
 
 
   const handleChange = (e) => {
@@ -67,42 +67,58 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1>Login to Dashboard</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <div className="form-group">
-          <label htmlFor="input">Email or Mobile Number</label>
-          <br />
-          <input
-            type="text"
-            id="input"
-            value={input}
-            onChange={handleChange}
-            className={`input ${error ? "error" : ""}`}
-          />
-          {error && <p className="error-message">{error}</p>}
-        </div>
-        <button
-          type="submit"
-          disabled={error !== ""}
-          style={{ backgroundColor: buttonColor }}
-          className="submit-button"
-        >
-          Next
-        </button>
-        <div className="separator">or</div>
-        <button className="google-button">
-          <div className="google-logo">
-            <img src={googleLogo} alt="Google Logo" />
+    <>
+      <div className="container">
+        <h1>Login to Dashboard</h1>
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <label htmlFor="input">Email or Mobile Number</label>
+            <br />
+            <input
+              type="text"
+              id="input"
+              value={input}
+              onChange={handleChange}
+              className={`input ${error ? "error" : ""}`}
+            />
+            {error && <p className="error-message">{error}</p>}
           </div>
-          Sign in with Google
-        </button>
-      </form>
-      <ToastContainer
-        autoClose={3000}
-        onClose={handleToastClose}
-      />
-    </div>
+          <button
+            type="submit"
+            disabled={error !== ""}
+            style={{ backgroundColor: buttonColor }}
+            className="submit-button"
+          >
+            Next
+          </button>
+          <div className="separator">or</div>
+          <button className="google-button">
+            <div className="google-logo">
+              <img src={googleLogo} alt="Google Logo" />
+            </div>
+            Sign in with Google
+          </button>
+
+        </form>
+
+        <ToastContainer
+          autoClose={3000}
+          onClose={handleToastClose}
+        />
+
+
+      </div>
+
+      <div className="footer-container">
+        <footer>
+          <p>Protected by reCaptcha. Google</p>
+          <p>
+            <a href="#" className="blue-link">Privacy Policy</a> & <a href="#" className="blue-link">Terms of Service</a> apply.
+          </p>
+        </footer>
+      </div>
+    </>
+
   );
 }
 
